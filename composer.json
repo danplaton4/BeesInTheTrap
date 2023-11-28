@@ -1,0 +1,20 @@
+{
+    "name": "danplaton4/bees-in-the-trap",
+    "description": "A simple game in PHP",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "symfony/console": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "danplaton4\\BeesInTheTrap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dan Platon",
+            "email": "danplaton4@gmail.com"
+        }
+    ]
+}
