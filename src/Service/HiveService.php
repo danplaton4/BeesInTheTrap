@@ -7,6 +7,7 @@ use danplaton4\BeesInTheTrap\Hive\Bee\DroneBee;
 use danplaton4\BeesInTheTrap\Hive\Bee\QueenBee;
 use danplaton4\BeesInTheTrap\Hive\Bee\WorkerBee;
 use danplaton4\BeesInTheTrap\Hive\Hive;
+use RuntimeException;
 
 class HiveService
 {
@@ -37,9 +38,9 @@ class HiveService
      *
      * This method selects a living bee randomly, considering the remaining hit points of each bee as a weight.
      * The probability of selecting a bee is proportional to its remaining hit points, ensuring statistical correctness.
-     * @return QueenBee|WorkerBee|DroneBee|null A random living bee, or null if there are no living bees.
+     * @return QueenBee|WorkerBee|DroneBee A random living bee, or null if there are no living bees.
      */
-    public function getRandomBee(): QueenBee|WorkerBee|DroneBee|null
+    public function getRandomBee(): QueenBee|WorkerBee|DroneBee
     {
         // Filter out dead bees
         $aliveBees = array_filter($this->hive->getBees(), function ($bee) {
@@ -48,7 +49,7 @@ class HiveService
 
         // If there are no living bees, return null
         if (empty($aliveBees)) {
-            return null; // No living bees
+            throw new RuntimeException('No living bees available.');
         }
 
         // Calculate total weight based on hit points
@@ -69,7 +70,7 @@ class HiveService
         }
 
         // This should not happen under normal circumstances
-        return null;
+        throw new RuntimeException('Failed to select a random living bee.');
     }
 
     /**
