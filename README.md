@@ -62,37 +62,37 @@ To set up the game, follow these steps:
 
 1. **Clone the Repository:**
 
-   \`\`\`bash
+   ```bash
    git clone https://github.com/yourusername/beesinthetrap.git
-   \`\`\`
+   ```
 
 2. **Navigate to the Project Directory:**
 
-   \`\`\`bash
+   ```bash
    cd beesinthetrap
-   \`\`\`
+   ```
 
 3. **Install Dependencies:**
 
    Ensure you have [Composer](https://getcomposer.org/) installed and run:
 
-   \`\`\`bash
+   ```bash
    composer install
-   \`\`\`
+   ```
 
 4. **Make the Game Executable:**
 
-   \`\`\`bash
+   ```bash
    chmod +x beesinthetrap
-   \`\`\`
+   ```
 
 ## How to Play
 
 To start the game, execute the following command from the project's root directory:
 
-\`\`\`bash
+```bash
 ./beesinthetrap
-\`\`\`
+```
 
 ### Gameplay Instructions
 
@@ -128,9 +128,9 @@ This project was developed with the following approach:
 
 Unit tests are included to ensure the game logic and components function correctly. To run the tests, execute the following command:
 
-\`\`\`bash
+```bash
 composer test
-\`\`\`
+```
 
 ## Future Improvements
 
